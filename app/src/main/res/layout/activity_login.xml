@@ -55,16 +55,16 @@
                 android:hint="Password"/>
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_login"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="12dp"
-            android:layout_marginTop="25dp"
-            android:background="#035D37"
-            android:text="Login"
-            android:textColor="#ffff"
+        <Button
+            android:id="@+id/buttonlogin"
+            android:layout_width="155dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/masuk"
+            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             />
 
 

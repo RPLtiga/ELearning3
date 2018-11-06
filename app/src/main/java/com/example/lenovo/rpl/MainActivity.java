@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         buttonmasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent login = new Intent(MainActivity.this,login.class);
+            Intent login = new Intent(MainActivity.this,Login.class);
             startActivity(login);
             }
         });

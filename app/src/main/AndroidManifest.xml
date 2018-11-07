@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".daftar_makul"></activity>
+        <activity android:name=".daftar_makul" />
+        <activity android:name=".Navigation"></activity>
     </application>
 
 </manifest>

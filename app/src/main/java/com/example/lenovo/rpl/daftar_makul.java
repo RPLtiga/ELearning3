@@ -8,6 +8,6 @@ public class daftar_makul extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daftar_makul);
+        setContentView(R.layout.activity_makul);
     }
 }

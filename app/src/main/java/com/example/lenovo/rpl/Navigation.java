@@ -32,13 +32,13 @@ public class Navigation extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.nav_home:
-                            selectedFragment = new ProfileActivity();
+                            selectedFragment = new Dummy();
                             break;
                         case R.id.nav_makul:
                             selectedFragment = new daftar_makul();
                             break;
                         case R.id.nav_search:
-                            selectedFragment = new ProfileActivity();
+                            selectedFragment = new Dummy();
                             break;
                         case R.id.nav_profile:
                             selectedFragment = new ProfileActivity();

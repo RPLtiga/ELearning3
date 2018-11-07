@@ -1,13 +1,18 @@
 package com.example.lenovo.rpl;
 
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.support.annotation.Nullable;
 import android.os.Bundle;
 
-public class daftar_makul extends AppCompatActivity {
+public class daftar_makul extends Fragment {
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_makul);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_makul, container, false);
     }
 }

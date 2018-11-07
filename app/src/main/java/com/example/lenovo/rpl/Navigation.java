@@ -35,7 +35,7 @@ public class Navigation extends AppCompatActivity {
                             selectedFragment = new ProfileActivity();
                             break;
                         case R.id.nav_makul:
-                            selectedFragment = new ProfileActivity();
+                            selectedFragment = new daftar_makul();
                             break;
                         case R.id.nav_search:
                             selectedFragment = new ProfileActivity();

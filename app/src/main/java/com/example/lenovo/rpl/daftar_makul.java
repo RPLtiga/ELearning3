@@ -1,6 +1,6 @@
 package com.example.lenovo.rpl;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;

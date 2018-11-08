@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class search extends AppCompatActivity {
     String [] items;
@@ -19,8 +20,8 @@ public class search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        listView"(ListView)findViewById(R.id.listview);
-        editText" = (EditText)findViewById(R.id.txtsearch);
+        listView=(ListView)findViewById(R.id.listview);
+        editText= (EditText)findViewById(R.id.txtsearch);
                 initList();
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -48,10 +49,13 @@ public class search extends AppCompatActivity {
 
     }
 
+    private void initList() {
+    }
+
     public void searchItem(String textToSearch){
         for (String item:items){
             if (!item.contains(textToSearch)){
-                listitems.remove(item)
+                listitems.remove(item);
             }
         }
 
@@ -61,7 +65,7 @@ public class search extends AppCompatActivity {
     public void initlist(){
         items=new String[]{"profile","matkul","file"};
                 listitems=new ArrayList<>(Arrays.asList(items));
-                adapter=new ArrayAdapter<>(String)(this, R.layout.list_item,_R.id.txtitems, listitems);
+                adapter=new ArrayAdapter<String>(this, R.layout.list_item, R.id.txtitem, listitems);
                 listView.setAdapter(adapter);
     }
 }

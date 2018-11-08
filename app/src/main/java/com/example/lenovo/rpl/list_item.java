@@ -3,11 +3,11 @@ package com.example.lenovo.rpl;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MENU_SEARCH extends AppCompatActivity {
+public class list_item extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.list_item);
     }
 }

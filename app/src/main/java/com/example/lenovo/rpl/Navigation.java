@@ -20,7 +20,7 @@ public class Navigation extends AppCompatActivity {
         //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new ProfileActivity()).commit();
+                    new Dummy()).commit();
         }
     }
 
@@ -32,13 +32,13 @@ public class Navigation extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.nav_home:
-                            selectedFragment = new ProfileActivity();
+                            selectedFragment = new Dummy();
                             break;
                         case R.id.nav_makul:
-                            selectedFragment = new ProfileActivity();
+                            selectedFragment = new daftar_makul();
                             break;
                         case R.id.nav_search:
-                            selectedFragment = new ProfileActivity();
+                            selectedFragment = new Dummy();
                             break;
                         case R.id.nav_profile:
                             selectedFragment = new ProfileActivity();

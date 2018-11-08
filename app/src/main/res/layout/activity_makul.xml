@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none" >
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +14,7 @@
     android:orientation="vertical"
     tools:context=".daftar_makul">
     
-    
+
     <ImageView
         android:background="@drawable/grad"
         android:layout_width="match_parent"
@@ -134,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
-                    android:text="Menajemen Resiko"
+                    android:text="Manajemen Resiko"
                     android:textColor="@android:color/black" />
 
                 <ImageButton
@@ -186,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
                     android:gravity="center"
-                    android:text="Kecerdasan BuatanB"
+                    android:text="Kecerdasan Buatan"
                     android:textColor="@android:color/black" />
 
                 <ImageButton
@@ -210,3 +217,4 @@
 
     </LinearLayout>
 </RelativeLayout>
+</ScrollView>

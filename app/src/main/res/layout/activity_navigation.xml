@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav"
+        app:itemTextColor="#035D37"
         android:background="?android:attr/windowBackground"
         />
 

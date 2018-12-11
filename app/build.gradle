@@ -28,7 +28,7 @@ android {
 //    implementation 'com.jakewharton:butterknife:6.1.0'
         implementation 'com.android.support:design:28.0.0'
         implementation 'com.android.support:percent:28.0.0'
-        implementation 'com.android.support:cardview-v7:28.0.0'
+
 // retrofit, gson
         implementation 'com.squareup.retrofit2:retrofit:2.4.0'
         implementation 'com.squareup.retrofit2:converter-gson:2.4.0'

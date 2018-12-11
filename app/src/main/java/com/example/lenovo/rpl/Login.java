@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 import android.app.Activity;
@@ -33,10 +34,10 @@ import retrofit2.Response;
 public class Login extends AppCompatActivity {
 
     EditText ambilNIM ,ambilPass; //Deklarasi object dari class EdiText
-    String nim,pass, dbnim, dbnama, dbpass, dbjk, dbprodi, dbfakultas;
+    String nim,pass, dbnim, dbnama, dbpass, dbjk, dbprodi, dbfakultas, dbdpa, dbtlogin;
     ApiInterface mApiInterface;
     Button login;
-    Context mContext;
+    Context mContext=this;
     ProgressDialog loading;
     int statusCode;
     //Activity context = this;
@@ -77,30 +78,40 @@ public class Login extends AppCompatActivity {
 
                             //loading.dismiss();
                             try {
-//                                Toast.makeText(mContext, "Response TRY", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Response TRY", Toast.LENGTH_SHORT).show();
                                 JSONObject hasil = new JSONObject(response.body().string());
-                                if (hasil.getString("isSucces").equals("true")  ){
+                                if (hasil.getString("isSuccess").equals("TRUE")  ){
                                     dbnim = hasil.getJSONObject("mahasiswa").getString("nim");
                                     dbnama = hasil.getJSONObject("mahasiswa").getString("nama");
                                     dbpass = hasil.getJSONObject("mahasiswa").getString("pass");
                                     dbprodi = hasil.getJSONObject("mahasiswa").getString("prodi");
                                     dbfakultas = hasil.getJSONObject("mahasiswa").getString("fakultas");
+                                    dbdpa = hasil.getJSONObject("mahasiswa").getString("dpa");
+                                    dbtlogin = hasil.getJSONObject("mahasiswa").getString("total_login");
 
                                     Toast.makeText(Login.this, "Response Sukses"+ dbnim+" "+dbnama+
                                             " "+ dbpass+" "+ dbprodi +" "+ dbfakultas, Toast.LENGTH_SHORT).show();
-//                                    Toast.makeText(Login.this, "Akun Tidak Ada "+dbnim+dbnama, Toast.LENGTH_SHORT).show();
-//                                    sharedPreference.saveSPString(sharedPreference.SP_NAMA, dbnama);
-//                                    Shared Pref ini berfungsi untuk menjadi trigger session login
-//                                    sharedPreference.saveSPBoolean(sharedPreference.SP_SUDAH_LOGIN, true);
-//
-//                                    startActivity(new Intent(Login.this, Navigation.class)
-//                                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
-//                                    finish();
+                                    Intent i = new Intent(Login.this, Navigation.class);
+                                    Bundle extras = new Bundle();
+
+                                    extras.putString("dbnim",dbnim);
+                                    extras.putString("dbnama",dbnama);
+                                    extras.putString("dbprodi",dbprodi);
+                                    extras.putString("dbfakultas",dbfakultas);
+                                    extras.putString("dbdpa",dbdpa);
+                                    extras.putString("dbtlogin",dbtlogin);
+
+                                    i.putExtras(extras);
+                                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                                    startActivity(i);
+
+
+                                    finish();
                                 } else {
 //                                    // Jika login gagal
                                     Toast.makeText(Login.this, "Akun Tidak Ada ", Toast.LENGTH_SHORT).show();
-//                                    String error_message = jsonRESULTS.getString("error_msg");
-//                                    Toast.makeText(mContext, error_message, Toast.LENGTH_SHORT).show();
                                 }
                             } catch (JSONException e) {
                                 Toast.makeText(mContext, "Response Gagal 1", Toast.LENGTH_SHORT).show();
@@ -120,7 +131,29 @@ public class Login extends AppCompatActivity {
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
                         Toast.makeText(mContext, "Response Gagal Load"+ nim+" "+pass, Toast.LENGTH_SHORT).show();
                         Log.e("debug", "onFailure: ERROR > " + t.toString());
-                        loading.dismiss();
+//                        loading.dismiss();
+
+//                        dbnim = "16650034";
+//                        dbnama = "Syafaat Adi N";
+//                        dbpass = "111";
+//                        dbprodi = "Teknik Informatika";
+//                        dbfakultas = "Sains dan Teknologi";
+//                        dbdpa = "Agung Fatwanto,Ph.d.";
+//                        dbtlogin = "999";
+//
+//                        Intent i = new Intent(getApplicationContext(), Navigation.class);
+//                        Bundle extras = new Bundle();
+//
+//                        extras.putString("dbnim",dbnim);
+//                        extras.putString("dbnama",dbnama);
+//                        extras.putString("dbprodi",dbprodi);
+//                        extras.putString("dbfakultas",dbfakultas);
+//                        extras.putString("dbdpa",dbdpa);
+//                        extras.putString("dbtlogin",dbtlogin);
+//
+//                        i.putExtras(extras);
+//
+//                        startActivity(i);
                     }
                 });
     }

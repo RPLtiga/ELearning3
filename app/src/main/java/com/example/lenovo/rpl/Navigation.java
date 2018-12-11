@@ -1,5 +1,6 @@
 package com.example.lenovo.rpl;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 
 public class Navigation extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +19,34 @@ public class Navigation extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
+        Bundle extras = getIntent().getExtras();
+
+//        Bundle bundle = new Bundle();
+//        String myMessage = "Stackoverflow is cool!";
+//        bundle.putString("dbnama", myMessage );
+
+        //VARIABLE
+//        Bundle bundle = new Bundle();
+
+//        if (extras != null) {
+//            String dbnim = extras.getString("dbnim");
+//            String dbnama = extras.getString("dbnim");
+//
+//            bundle.putString("dbnim", dbnim );
+//            bundle.putString("dbnama", dbnim );
+//            bundle.putString("dbtlogin", dbnim );
+//            bundle.putString("dbprodi", dbnim );
+//            bundle.putString("dbdpa", dbnim );
+//        }
+
+
         //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
+            Dummy dummy = new Dummy();
+            dummy.setArguments(extras);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new Dummy()).commit();
+                    dummy).commit();
+
         }
     }
 
@@ -29,6 +55,7 @@ public class Navigation extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
+                    Bundle extras = getIntent().getExtras();
 
                     switch (item.getItemId()) {
                         case R.id.nav_home:
@@ -45,6 +72,8 @@ public class Navigation extends AppCompatActivity {
                             break;
                     }
 
+                    assert selectedFragment != null;
+                    selectedFragment.setArguments(extras);
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             selectedFragment).commit();
 

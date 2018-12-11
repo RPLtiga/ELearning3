@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonmasuk = (Button) findViewById(R.id.buttonmasuk);
+        buttonmasuk = findViewById(R.id.buttonmasuk);
         buttonmasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        logouin= (ImageView) findViewById(R.id.logouin);
+        logouin= findViewById(R.id.logouin);
         frombottom = AnimationUtils.loadAnimation(this,R.anim.frombottom);
         logouin.setAnimation(frombottom);
     }

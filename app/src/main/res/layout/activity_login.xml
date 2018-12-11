@@ -56,6 +56,11 @@
                 android:hint="Password"/>
         </android.support.design.widget.TextInputLayout>
 
+        <TextView
+            android:id="@+id/TextAA"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
         <Button
             android:id="@+id/buttonlogin"
             android:layout_width="155dp"

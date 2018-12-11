@@ -5,10 +5,10 @@
     android:background="@android:color/holo_blue_light">
 
     <TextView
+        android:id="@+id/tulisan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dummy
-Under Construction"
+        android:text="Dummy Under Construction"
         android:gravity="center"
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
